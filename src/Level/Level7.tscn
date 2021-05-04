@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Level/Level7.gd" type="Script" id=1]
+[ext_resource path="res://src/DeathScreen/Label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Font/No Virus.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="Level7" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 332.732, 56.8684 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.0431373, 0.0431373, 1 )
+
+[node name="Label" parent="." instance=ExtResource( 2 )]
+margin_left = 267.27
+margin_top = 97.9989
+margin_right = 727.27
+margin_bottom = 123.999
+text = "You have reached the bottom of the world!"
+
+[node name="Label2" parent="." instance=ExtResource( 2 )]
+margin_left = 306.469
+margin_top = 165.707
+margin_right = 677.469
+margin_bottom = 191.707
+text = "Quite a small world if you ask me..."
+
+[node name="Label3" parent="." instance=ExtResource( 2 )]
+margin_left = 326.069
+margin_top = 245.888
+margin_right = 697.069
+margin_bottom = 271.888
+text = "Nevertheless, congratulations!"
+
+[node name="Label4" parent="." instance=ExtResource( 2 )]
+margin_left = 326.069
+margin_top = 306.469
+margin_right = 697.069
+margin_bottom = 332.469
+
+[node name="Button" type="Button" parent="."]
+margin_left = 377.801
+margin_top = 404.787
+margin_right = 616.801
+margin_bottom = 436.787
+custom_fonts/font = SubResource( 1 )
+text = "Return to main menu"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 411.137
+margin_top = 504.793
+margin_right = 566.137
+margin_bottom = 536.793
+custom_fonts/font = SubResource( 1 )
+text = "Exit the game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tree_entered" from="." to="." method="_on_Level7_tree_entered"]
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_Button2_button_down"]

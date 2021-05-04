@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/DeathScreen/Label.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Font/No Virus.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/StartingScreen/Platformer demo.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0627451, 0.0431373, 0.0431373, 1 )
+
+[node name="Label" parent="." instance=ExtResource( 1 )]
+margin_left = 394.201
+margin_top = 83.0622
+margin_right = 595.201
+margin_bottom = 109.062
+text = "Simple platformer"
+
+[node name="StartGame" type="Button" parent="."]
+margin_left = 402.059
+margin_top = 205.833
+margin_right = 580.059
+margin_bottom = 237.833
+custom_fonts/font = SubResource( 1 )
+text = "Start the game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGame" type="Button" parent="."]
+margin_left = 402.059
+margin_top = 319.202
+margin_right = 580.059
+margin_bottom = 351.202
+custom_fonts/font = SubResource( 1 )
+text = "Exit the game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="StartGame" to="." method="_on_StartGame_button_down"]
+[connection signal="button_down" from="ExitGame" to="." method="_on_ExitGame_button_down"]
